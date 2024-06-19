@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+body {
+   background-color: #2E2E2E;
+   margin-bottom :400px;
+}
+.header{
+   background-image: url(../img/head_bg.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 1000px;
+}
+.container {
+   margin: 0 auto;
+   max-width: 1180px;
+   padding: 15px;
+}
+
+.header__top {
+   
+   border-bottom:1px solid #578295;
+   
+}
+.header__top-inner{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 0;
+   color: #fff;
+   font-family: "Gudea", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 14px;
+}
+
+.links {
+   display: flex;
+   align-items: center;
+   gap: 50px;
+}
+
+
+.header__button {
+   padding: 12px 14px;
+   border-radius: 10px;
+   border: 1px solid #578295;
+   color: #fff;
+   
+}
+
+.header__title {
+   width: 900px;
+   width: 580px;
+   color: #38484F;
+   font-size: 48px;
+}
+
+.section{
+   z-index: 2;
+   margin-top: 150px;
+}
+
+.buble1{
+   position: absolute;
+   margin-top: -520px;
+   z-index: -1;
+   width: 81vw;
+   height: 100%;
+}
+
+.section__inner{
+   padding: 10px 0;
+   color: #fff;
+      font-family: "Gudea", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+}
+.section-title{
+   max-width: 605px;
+   font-size: 96px;
+}
+
+.section__inner p{
+   margin: 50px 0;
+   max-width: 786px;
+   font-size: 36px;
+}
+
+.idea_for_brend-table{
+   border-collapse: collapse;
+      border-spacing: 0;
+
+   border-top: 2px solid #578295;
+   border-bottom: 2px solid #578295;
+   font-size: 14px;
+   font-family: "Gudea", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+}
+
+tbody{
+   margin: -1px;
+   
+}
+
+tr td{
+   border-bottom:1px solid #578295;
+   width: 40px;
+}
+
+.table-line{
+   width: 150px ;
+}
+
+.table-void{
+   width: 40px !important;
+}
+
+.border-bottom-none{
+   border-bottom: none !important;
+}
+.table-text{
+   padding: 17px 17px 17px 0;
+   width: 400px;
+   border-right: 2px solid #578295;
+   color: #fff;
+}
+
+.table-text span{
+   font-weight: 700;
+   color: #70C3E7;
+}
+
+.border-right-none{
+   padding: 17px 11px 17px 17px;
+   border-right: none !important;
+}
+
+.tkani{
+   
+}
+
+.tkani__inner {
+   display: flex;
+   flex-direction: row;
+}
+
+.tkani__items {
+   display: flex;
+   flex-direction: column;
+}
+.tkani__items :first-child {
+   border-top: 1px solid #578295;
+}
+
+.tkani__item {
+   padding: 48px 108px 48px 48px;
+   border-bottom: 1px solid #578295;
+}
+
+
+.tkani__items :last-child{
+   border-bottom: none;
+}
+
+.tkani__item p{
+   margin: 0;
+   width: 245px;
+   font-size: 16px;
+   border-top:none !important;
+}
+
+.tkani__item span{
+   font-weight: 700;
+   color: #70C3E7;   
+   border-top: none !important;
+}
+
+.tkani__img {
+   position: relative;
+}
+
+.tkani__img img{
+   max-width: 780px ;
+}
+
+.img_descr {
+   position: absolute;
+   margin: 69px;
+   z-index: 10;
+   top: 0;
+   right: 0;
+   
+   color: #000;
+}
+
+.img_descr p{
+   margin: 0;
+   margin-top: 10px;
+   width: 117px;
+   font-family: "Gudea", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 16px;
+}
+
+.img_descr p:first-child{
+   margin-top: 0;
+   padding-bottom: 10px;
+   border-bottom:1px solid #000;
+}
+
+.rubashka-descr{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   font-weight: 700;
+   font-size: 20px;
+   border-top: none !important;
+}
+.rubashka-descr :first-child{
+   font-size :32px; 
+}
