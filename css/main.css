@@ -2,7 +2,7 @@
 
 body {
    background-color: #2E2E2E;
-   margin-bottom :400px;
+
 }
 .header{
    background-image: url(../img/head_bg.png);
@@ -348,5 +348,81 @@ button:hover {
    font-weight: 400;
    color: #000;
 }
-.Chranenie-img {
+.footer{
+   position: relative;
+   margin-top: 150px;
+   min-height: 500px !important;
+   background-color: #EEF5FF ;
+}
+.footer__inner {
+   
+}
+.footer-img {
+   position: absolute;
+   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   z-index: 1;
+}
+
+.footer__items {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   z-index: 2;
+}
+.footer__item {
+   width: 100%;
+   height: 100%; 
+}
+.chat { 
+   display: flex;
+   justify-content: flex-end;
+   padding: 48px;
+   height: 100%;
+   font-family: "Gudea", sans-serif;
+   font-size: 24px;
+   font-weight: 400;
+   color: #fff;
+   background-image: url(../img/bubleFooter1.svg);
+   background-repeat: no-repeat;
+   border-right: 1px solid #2CB1EA;
+}
+
+.chat__inner {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.message {
+   background: #2CB1EA;
+   max-width: 450px;
+   width: fit-content;
+   padding: 10px;
+   border-radius: 15px;
+}
+
+.message:first-child,
+.message:last-child {
+   background: #003B54;
+   align-self: flex-start;
+}
+
+.message:nth-child(2),
+.message:nth-child(3),
+.message:nth-child(4) {
+   align-self: flex-end;
+}
+
+
+.qrs {
+   display: flex;
+   gap:40px ;
+   height: 100%;
+   padding: 164px;
+   background-image: url(../img/bubleFooter2.svg );
+   background-repeat: no-repeat;
+}
+.qr {
 }
