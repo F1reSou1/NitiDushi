@@ -56,19 +56,46 @@ body {
 }
 
 .section{
+   position: relative;
    z-index: 2;
-   margin-top: 150px;
+   padding-top: 150px;
 }
 
 .buble1{
    position: absolute;
-   margin-top: -520px;
+   top: 0;
+   right: 0;
    z-index: -1;
-   width: 81vw;
-   height: 100%;
+   width: 70vw;
+}
+
+.bumble2{
+   position: absolute;
+   top: 30%;
+   right: 0;
+   z-index: -1;
+   width: 50vw;
+}
+
+.buble3{
+   position: absolute;
+   top: 50%;
+   left: 0;
+   z-index: -1;
+   width: 30vw;
+}
+
+.buble4{
+   margin-bottom: -150px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   z-index: -1;
+   width: 40vw;
 }
 
 .section__inner{
+   position: relative;
    padding: 10px 0;
    color: #fff;
       font-family: "Gudea", sans-serif;
@@ -349,6 +376,7 @@ button:hover {
    color: #000;
 }
 .footer{
+   z-index: 2;
    position: relative;
    margin-top: 150px;
    min-height: 500px !important;
@@ -375,10 +403,11 @@ button:hover {
    width: 100%;
    height: 100%; 
 }
-.chat { 
+.chat {
    display: flex;
    justify-content: flex-end;
    padding: 48px;
+   width: 50vw;
    height: 100%;
    font-family: "Gudea", sans-serif;
    font-size: 24px;
@@ -386,8 +415,10 @@ button:hover {
    color: #fff;
    background-image: url(../img/bubleFooter1.svg);
    background-repeat: no-repeat;
-   border-right: 1px solid #2CB1EA;
+   background-size: cover; 
+   border-right: 3px solid #2CB1EA;
 }
+
 
 .chat__inner {
    display: flex;
@@ -423,6 +454,8 @@ button:hover {
    padding: 164px;
    background-image: url(../img/bubleFooter2.svg );
    background-repeat: no-repeat;
+   background-size: cover; 
+
 }
 .qr {
 }
