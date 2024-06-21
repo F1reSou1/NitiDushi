@@ -327,3 +327,26 @@ button:hover {
 .changeWidth{
    max-width: 859px !important;
 }
+
+.Chranenie__items {
+   display: flex;
+}
+.Chraninei__item {
+   position: relative;
+}
+
+.Chraninei__item p{
+   position: absolute;
+   margin: 0;
+   padding: 20px;
+   top: 0;
+   right: 0;
+   text-align: start;
+   max-width: 390px;
+   font-family: "Gudea", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   color: #000;
+}
+.Chranenie-img {
+}
