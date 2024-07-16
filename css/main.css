@@ -45,7 +45,7 @@ body {
    border-radius: 10px;
    border: 1px solid #578295;
    color: #fff;
-   
+   background: #000;
 }
 
 .header__title {
@@ -331,6 +331,7 @@ button:hover {
    flex-direction: row;
    justify-content: space-between;
    align-items: stretch;
+   gap: 15px;
 }
 .top__item{
    display: flex;
@@ -459,3 +460,4 @@ button:hover {
 }
 .qr {
 }
+

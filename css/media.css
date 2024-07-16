@@ -1,0 +1,50 @@
+@media screen and  (max-width : 1406px) {
+    #num{
+        color: #000 !important;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    
+}
+
+@media screen and (max-width: 687px) {
+    /* .header{
+
+    } */
+    .section{
+        padding-top: 0;
+    }
+    .section-title{
+        font-size : 65px;
+    }
+    .section__inner p{
+        margin: 30px 0;
+        max-width: 356px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 631px) {
+    .header{
+        background-position: -700px top;
+    }
+    .header__title{
+        width:350px ;
+        font-size: 32px;
+    }
+   .phone__number{
+    display: none;
+   }
+}
+
+@media screen and (max-width: 409px){
+    .section-title{
+        font-size : 45px;
+    }
+    .section__inner p{
+        margin: 30px 0;
+        max-width: 256px;
+        font-size: 13px;
+    }
+}
