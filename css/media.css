@@ -6,12 +6,14 @@
 
 @media screen and (max-width: 1045px) {
     
+    
 }
 
 @media screen and (max-width: 687px) {
-    /* .header{
-
-    } */
+    .header{
+        height: calc(100vh + 40px) ;
+        background-position: -600px -40px;
+    }
     .section{
         padding-top: 0;
     }
@@ -27,11 +29,10 @@
 
 @media screen and (max-width: 631px) {
     .header{
-        background-position: -700px top;
     }
     .header__title{
-        width:350px ;
-        font-size: 32px;
+        font-size: 25px;
+        max-width: 237px;
     }
    .phone__number{
     display: none;

@@ -1,4 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+ 
+ .slider-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   width: 1200px; /* 3 блока по 400px */
+   margin-bottom: 20px;
+ }
+ 
+ .slider {
+   display: flex;
+ }
+ 
+ .block {
+   min-width: 400px;
+   height: 600px;
+   margin: 10px;
+   background-color: #ccc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2em;
+ }
+ 
+ .controls {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .nav-button {
+   background-color: #007bff;
+   color: white;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+   font-size: 1em;
+   margin: 0 10px;
+   display: flex;
+   align-items: center;
+ }
+ 
+ .nav-button:disabled {
+   background-color: #cccccc;
+   cursor: not-allowed;
+ }
+ 
+ .dots {
+   display: flex;
+   align-items: center;
+ }
+ 
+ .dot {
+   width: 10px;
+   height: 10px;
+   background-color: #007bff;
+   border-radius: 50%;
+   margin: 0 5px;
+   transition: width 0.3s, height 0.3s;
+ }
+ 
+ .dot.active {
+   width: 15px;
+   height: 15px;
+   background-color: #0000ff;
+ }
+ 
 
 body {
    background-color: #2E2E2E;
@@ -25,7 +93,7 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 20px 0;
+   padding: 10px 0;
    color: #fff;
    font-family: "Gudea", sans-serif;
    font-weight: 400;
@@ -53,6 +121,7 @@ body {
    width: 580px;
    color: #38484F;
    font-size: 48px;
+   font-weight: 900;
 }
 
 .section{
@@ -252,76 +321,8 @@ tr td{
 .change{
    max-width: 647px !important;
 }
-.slider {
-   position: relative;
-   width: 600px;
-   height: 500px;
-   overflow: hidden;
-}
 
-.slides {
-   display: flex;
-   transition: transform 0.5s ease-in-out;
-}
 
-.slide {
-   min-width: 200px;
-   box-sizing: border-box;
-   position: relative;
-}
-
-.slide img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-}
-
-.caption {
-   position: absolute;
-   bottom: 20px;
-   left: 50%;
-   transform: translateX(-50%);
-   text-align: center;
-   color: white;
-   background-color: rgba(0, 0, 0, 0.5);
-   padding: 10px;
-   border-radius: 5px;
-}
-
-.dots {
-   text-align: center;
-   position: absolute;
-   bottom: 10px;
-   width: 100%;
-}
-
-.dot {
-   cursor: pointer;
-   height: 15px;
-   width: 15px;
-   margin: 0 5px;
-   background-color: #bbb;
-   border-radius: 50%;
-   display: inline-block;
-   transition: background-color 0.6s ease;
-}
-
-.dot.active {
-   background-color: #717171;
-}
-
-button {
-   padding: 10px 20px;
-   background-color: #ff7f50;
-   color: white;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-}
-
-button:hover {
-   background-color: #ff6347;
-}
 
 .top{
    margin-top: 50px;
