@@ -15,16 +15,16 @@
       <div class="header__top">
          <div class="container">
             <div class="header__top-inner">
-               <div class="logo">
+               <button class="logo" id="orderButton_2">
                   <img src="./img/logo.svg" alt="logo">
-               </div>
+               </button>
                <div class="links">
                   <button class="personal">
                      <img src="./img/personal.svg" alt="личный кабинет">
                   </button>
-                  <a class="header__button" href="#">
+                  <button class="header__button" id="orderButton">
                      <span>Сделать заказ</span>
-                  </a>
+                  </button>
                </div>
             </div>
          </div>
@@ -37,6 +37,24 @@
          </div>
       </div>
    </header>
+
+   <div class="modal" id="orderModal">
+      <div class="modal-content">
+         <span class="close-button" id="closeButton">&times;</span>
+         <h2 class="modal-title">Регистрация</h2>
+         <form id="registrationForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Зарегистрироваться</button>
+         </form>
+      </div>
+   </div>
+
+   
    <main>
       <section class="section">
          <img src="./img/buble1.svg" class="buble1">
@@ -166,18 +184,17 @@
             <div class="section__inner">
                <h2 class="change section-title">Коллекция “Первая нить”</h2>
                <p>Самая первая коллекция созданная нами. Наполненная идеями комфота и стиля, доказывает, что выглядеть стильно легко.</p>
+            
                <div class="slider-inner">
-
-                  <div class="slider-container">
-                     <div class="slider" id="slider"></div>
-                   </div>
-                   <div class="controls">
-                     <button id="prev" class="nav-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
-                     <div class="dots" id="dots"></div>
-                     <button id="next" class="nav-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></button>
-                   </div>
+                  <div class="slider">
+                     
+                  </div>
+                  <div class="controls">
+                     <img id="prev" class="nav-button" src="./img/leftDot.svg" alt="Previous">
+                     <div class="dots"></div>
+                     <img id="next" class="nav-button" src="./img/rightDot.svg" alt="Next">
+                  </div>
                </div>
-
             </div>
          </div>
       </section>
