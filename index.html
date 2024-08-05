@@ -15,14 +15,14 @@
       <div class="header__top">
          <div class="container">
             <div class="header__top-inner">
-               <button class="logo" id="orderButton_2">
+               <button class="logo">
                   <img src="./img/logo.svg" alt="logo">
                </button>
                <div class="links">
-                  <button class="personal">
+                  <button class="personal" id="openModalBtn" onclick="openModal()">
                      <img src="./img/personal.svg" alt="личный кабинет">
                   </button>
-                  <button class="header__button" id="orderButton">
+                  <button class="header__button">
                      <span>Сделать заказ</span>
                   </button>
                </div>
@@ -38,23 +38,23 @@
       </div>
    </header>
 
-   <div class="modal" id="orderModal">
-      <div class="modal-content">
-         <span class="close-button" id="closeButton">&times;</span>
-         <h2 class="modal-title">Регистрация</h2>
-         <form id="registrationForm">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Зарегистрироваться</button>
-         </form>
+   
+   
+   <div class="buyingModal">
+      <div class="buyingModal-content">
+
       </div>
    </div>
 
-   
+
+
+   <button class="korzina">
+      <span class="count">{{count}}</span>
+      <svg width="800px" height="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M8 17.5L5.81763 6.26772C5.71013 5.81757 5.30779 5.5 4.84498 5.5H3M8 17.5H17M8 17.5C8.82843 17.5 9.5 18.1716 9.5 19C9.5 19.8284 8.82843 20.5 8 20.5C7.17157 20.5 6.5 19.8284 6.5 19C6.5 18.1716 7.17157 17.5 8 17.5ZM17 17.5C17.8284 17.5 18.5 18.1716 18.5 19C18.5 19.8284 17.8284 20.5 17 20.5C16.1716 20.5 15.5 19.8284 15.5 19C15.5 18.1716 16.1716 17.5 17 17.5ZM7.78357 14.5H17.5L19 7.5H6" stroke="#121923" stroke-width="1.2"/>
+      </svg>
+   </button>
+
    <main>
       <section class="section">
          <img src="./img/buble1.svg" class="buble1">
@@ -127,6 +127,24 @@
          </div>
       </section>
 
+
+      <div class="modal" id="orderModal">
+         <div class="modal-content">
+            <span class="close-button" onclick="closeModal(event)">&times;</span>
+            <h2 class="modal-title">Регистрация</h2>
+            <form id="registrationForm">
+               <label for="name">Имя:</label>
+               <input type="text" id="name" name="name" required>
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+               <label for="password">Пароль:</label>
+               <input type="password" id="password" name="password" required>
+               <button type="submit">Зарегистрироваться</button>
+            </form>
+         </div>
+      </div>
+   
+
       <!-- <section class="section">
          <img src="./img/bumble2.svg" alt="" class="bumble2">
          <div class="container">
@@ -191,7 +209,13 @@
                   </div>
                   <div class="controls">
                      <img id="prev" class="nav-button" src="./img/leftDot.svg" alt="Previous">
-                     <div class="dots"></div>
+                     <div class="dots">
+                        <div class="dot first"> </div>
+                        <div class="dot"></div>
+                        <div class="dot big"></div>
+                        <div class="dot"></div>
+                        <div class="dot first"></div>
+                     </div>
                      <img id="next" class="nav-button" src="./img/rightDot.svg" alt="Next">
                   </div>
                </div>

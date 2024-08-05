@@ -1,97 +1,177 @@
 const data = {
   products: [
-    {
-      id: 1,
-      name: 'Шапка',
-      img: '/img/product3.jpg',
+    { id: 6,
+      name: 'Укороченная Оверсайз Футболка | Белая', 
+      img: './img/products/uk_overs_men_white.jpg', 
+      Price : 2100,
+      btn : true,
+      size : ['XS', 'S', 'M', 'L', 'XL'],
     },
-    {
-      id: 2,
-      name: 'Шапка',
-      img: './img/product3.jpg',
+    { id: 7,
+      name: 'Укороченная Оверсайз Футболка | Черная', 
+      img: './img/products/uk_overs_women_black.jpg', 
+      Price : 2100,
+      btn : false,
+      size : ['XS', 'S', 'M', 'L', 'XL'],
     },
-    {
-      id: 3,  
-      name: 'Шапка',
-      img: './img/product3.jpg',
+    { id: 1,
+      name: 'Оверсайз Футболка', 
+      img: './img/products/overs_fut_men.jpg', 
+      Price : 4000,
+      btn : true,
+      size : ['XS', 'S', 'M', 'L', 'XL'],
     },
-    { 
-      id: 4,
-      name: 'Шапка',
-      img: './img/product3.jpg',
+    { id: 2,
+      name: 'Оверсайз рубашка хлопковая', 
+      img: './img/products/rubashka_women.jpg', 
+      Price : 5400,
+      btn : false,
+      size : ['S'],
     },
-    {
-      id: 5,
-      name: 'Шапка',
-      img: './img/product3.jpg',
+    { id: 3,
+      name: 'Шоппер | в стиле Нити Души', 
+      img: './img/products/shopper.jpg', 
+      Price : 2100,
+      btn : false,
+      size : [],
     },
-    {
-      id: 6,
-      name: 'Шапка',
-      img: './img/product3.jpg',
-    }
+    { id: 4,
+      name: 'Штаны |в стиле Нити Души', 
+      img: './img/products/shtani_1.jpg', 
+      Price : 4500,
+      btn : false,
+      size : ['M', 'L'],
+    },
+    { id: 5,
+      name: 'Укороченная Оверсайз Футболка | Черная', 
+      img: './img/products/uk_overs_men_black.jpg', 
+      Price : 2100,
+      btn : true,
+      size : ['XS', 'S', 'M', 'L', 'XL'],
+    },
+    { id: 8,
+      name: 'Укороченная Оверсайз Футболка | Белая', 
+      img: './img/products/uk_overs_women_white.jpg', 
+      Price : 2100,
+      btn : false,
+      size : ['XS', 'S', 'M', 'L', 'XL'],
+    },
   ]
+};
 
-}
+let currentIndex = 0;
+let dotIndex = 0;
+const slideWidth = 375;
+const slideGap = 10;
+const visibleSlides = 3;
+const maxIndex = data.products.length - visibleSlides;
+const totalDots = maxIndex + 1;
 
 function render() {
   const products = data.products;
-
-  // Получаем контейнер для карточек
   const slider = document.querySelector('.slider');
 
-  products.forEach(product => {
-    // Создаем основную карточку
+  products.forEach((product, index) => {
+    // Создаем карточку
     const card = document.createElement('div');
     card.classList.add('card');
-
-    // Создаем элемент изображения
     const img = document.createElement('img');
     img.src = product.img;
     img.alt = product.name;
     card.appendChild(img);
 
-    // Создаем внутреннюю часть карточки
     const cardInner = document.createElement('div');
     cardInner.classList.add('card-inner');
 
-    // Создаем голову карточки
     const cardHead = document.createElement('div');
     cardHead.classList.add('card-head');
-
-    // Создаем элементы для названия и цены
     const cardTitle = document.createElement('div');
     cardTitle.classList.add('cardtitle');
     cardTitle.textContent = product.name;
-
     const cardPrice = document.createElement('div');
     cardPrice.classList.add('cardprice');
-    cardPrice.textContent = 'Цена'; // Здесь должна быть логика для отображения цены
+    cardPrice.textContent = product.Price + ' ₽';
 
-    // Добавляем элементы в голову карточки
     cardHead.appendChild(cardTitle);
     cardHead.appendChild(cardPrice);
     cardInner.appendChild(cardHead);
 
-    // Создаем нижнюю часть карточки
     const cardBottom = document.createElement('div');
     cardBottom.classList.add('card-bottom');
-
-    // Создаем кнопку заказа
     const orderButton = document.createElement('button');
     orderButton.classList.add('order-button');
-    orderButton.innerHTML = '<span>Заказать</span>';
 
-    // Добавляем кнопку в нижнюю часть карточки
+    if (product.btn === true) {
+      orderButton.classList.add('white-btn');
+    }
+    else{
+      orderButton.classList.add('black-btn');
+    }
+    orderButton.innerHTML = '<span>Заказать</span>';
     cardBottom.appendChild(orderButton);
     cardInner.appendChild(cardBottom);
 
-    // Добавляем внутреннюю часть карточки в основную карточку
     card.appendChild(cardInner);
-
-    // Добавляем карточку в контейнер
     slider.appendChild(card);
   });
+
+  showSlide(currentIndex);
+  updateDots();
 }
 
+function showSlide(index) {
+  const slider = document.querySelector('.slider');
+  const totalOffset = (slideWidth + slideGap) * index;
+
+  slider.style.transform = `translateX(-${totalOffset}px)`;
+}
+
+function nextSlide() {
+  if (currentIndex >= maxIndex) {
+    currentIndex = 0;
+    dotIndex = 0;
+  } else {
+    currentIndex++;
+    dotIndex = (dotIndex + 1) % totalDots;
+  }
+  showSlide(currentIndex);
+  updateDots();
+}
+
+function prevSlide() {
+  if (currentIndex <= 0) {
+    currentIndex = maxIndex;
+    dotIndex = maxIndex;
+  } else {
+    currentIndex--;
+    dotIndex = (dotIndex - 1 + totalDots) % totalDots;
+  }
+  showSlide(currentIndex);
+  updateDots();
+}
+
+document.getElementById('prev').addEventListener('click', prevSlide);
+document.getElementById('next').addEventListener('click', nextSlide);
+
 render();
+
+
+
+
+// modal reg form
+
+function openModal() {
+  var modal = document.getElementById("orderModal");
+  modal.style.display = "block";
+  document.body.classList.add('no-scroll');
+}
+
+function closeModal(event) {
+  var modal = document.getElementById("orderModal");
+  if (event.target === modal || event.target.className === "close-button") {
+    modal.style.display = "none";
+    document.body.classList.remove('no-scroll');
+  }
+}
+
+
