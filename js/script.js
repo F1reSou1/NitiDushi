@@ -208,5 +208,8 @@ function closeModal(event) {
 
 // modal detail product
 
-
-
+function openModalUnique(product) {
+  var modal = document.getElementById("buyingModal-unique");
+  modal.style.display = "block";
+  document.body.classList.add('no-scroll');
+}
