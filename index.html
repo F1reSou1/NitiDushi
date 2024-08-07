@@ -11,6 +11,24 @@
 </head>
 
 <body>
+
+   
+   <div class="modal" id="orderModal">
+      <div class="modal-content">
+         <span class="close-button" onclick="closeModal(event)">&times;</span>
+         <h2 class="modal-title">Регистрация</h2>
+         <form id="registrationForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Зарегистрироваться</button>
+         </form>
+      </div>
+   </div>
+
    <header class="header">
       <div class="header__top">
          <div class="container">
@@ -40,13 +58,7 @@
 
    
    
-   <div class="buyingModal">
-      <div class="buyingModal-content">
-
-      </div>
-   </div>
-
-
+   
 
    <button class="korzina">
       <span class="count">{{count}}</span>
@@ -126,23 +138,6 @@
             </table>
          </div>
       </section>
-
-
-      <div class="modal" id="orderModal">
-         <div class="modal-content">
-            <span class="close-button" onclick="closeModal(event)">&times;</span>
-            <h2 class="modal-title">Регистрация</h2>
-            <form id="registrationForm">
-               <label for="name">Имя:</label>
-               <input type="text" id="name" name="name" required>
-               <label for="email">Email:</label>
-               <input type="email" id="email" name="email" required>
-               <label for="password">Пароль:</label>
-               <input type="password" id="password" name="password" required>
-               <button type="submit">Зарегистрироваться</button>
-            </form>
-         </div>
-      </div>
    
 
       <!-- <section class="section">
@@ -196,8 +191,9 @@
             </div>
          </div>
       </section> -->
-
+      
       <section class="section">
+      
          <div class="container">
             <div class="section__inner">
                <h2 class="change section-title">Коллекция “Первая нить”</h2>
@@ -292,6 +288,13 @@
          </div>
       </div>
    </footer> -->
+
+   <div class="buyingModal">
+      <div class="buyingModal-content">
+
+      </div>
+   </div>
+
 </body>
 
 

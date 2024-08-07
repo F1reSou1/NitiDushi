@@ -66,10 +66,11 @@ const slideGap = 10;
 const visibleSlides = 3;
 const maxIndex = data.products.length - visibleSlides;
 const totalDots = maxIndex + 1;
-
 function render() {
   const products = data.products;
   const slider = document.querySelector('.slider');
+  const buyingModalUnique = document.querySelector('.buyingModal-unique');
+  const buyingModalContentUnique = document.querySelector('.buyingModal-content-unique');
 
   products.forEach((product, index) => {
     // Создаем карточку
@@ -103,11 +104,11 @@ function render() {
 
     if (product.btn === true) {
       orderButton.classList.add('white-btn');
-    }
-    else{
+    } else {
       orderButton.classList.add('black-btn');
     }
     orderButton.innerHTML = '<span>Заказать</span>';
+    orderButton.setAttribute('onclick', `openModalUnique(${JSON.stringify(product)})`);
     cardBottom.appendChild(orderButton);
     cardInner.appendChild(cardBottom);
 
@@ -117,7 +118,37 @@ function render() {
 
   showSlide(currentIndex);
   updateDots();
+
+  // Уникальная функция для открытия модального окна
+  window.openModalUnique = function(product) {
+    buyingModalContentUnique.innerHTML = '';
+
+    const modalImg = document.createElement('img');
+    modalImg.src = product.img;
+    modalImg.alt = product.name;
+
+    const modalTitle = document.createElement('div');
+    modalTitle.textContent = product.name;
+
+    const modalPrice = document.createElement('div');
+    modalPrice.textContent = product.Price + ' ₽';
+
+    buyingModalContentUnique.appendChild(modalImg);
+    buyingModalContentUnique.appendChild(modalTitle);
+    buyingModalContentUnique.appendChild(modalPrice);
+
+    buyingModalUnique.style.display = 'block';
+  }
+
+  // Закрываем уникальное модальное окно при клике вне его
+  window.addEventListener('click', (event) => {
+    if (event.target == buyingModalUnique) {
+      buyingModalUnique.style.display = 'none';
+    }
+  });
 }
+
+
 
 function showSlide(index) {
   const slider = document.querySelector('.slider');
@@ -173,5 +204,9 @@ function closeModal(event) {
     document.body.classList.remove('no-scroll');
   }
 }
+
+
+// modal detail product
+
 
 
